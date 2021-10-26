@@ -1,2 +1,2 @@
 # faksasm
-x32 asn
+Zadaci koji su radjeni na casovima arhitektura racunara u x32 asembleru.
