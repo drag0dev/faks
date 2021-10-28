@@ -1,53 +1,46 @@
+#program koji vrsi mnozenje preko sabiranja
+#autor: Dragoslav Tamindzija SV47 2021
 .section .data
-a: .quad 4
-b: .quad 20
+a: .quad 20
+b: .quad 4
 greska: .byte 0
 .section .text
 .global main
 
-priprema:
-	#proverava se da li je a veci od b
+main:
+	#provera da li je a vece od b
 	movl a+4, %eax
 	cmpl b+4, %eax
-	je main #ako su jednaki skoci na main
-	jc main #ako je b vece od a skoci na main
+	jc priprema #ako je visi deo b veci od viseg dela a idemo u main
+	ja zamena # ako je b manje od a vrsi se zamena
 	movl a, %eax
 	cmpl b, %eax
-	jc main
-
-	#dalje cemo zameniti vrednosti a i b
+	jc priprema #ako je b vece idemo u main
+zamena:
 	movl a+4, %eax
-	xchgl %eax,b+4
+	xchgl %eax, b+4
 	movl %eax, a+4
 
 	movl a, %eax
-	xchg %eax, b
+	xchgl %eax, b
 	movl %eax, a
-main:
-	movl $0, %eax
+priprema:
+	movl a, %eax
 	movl $0, %ebx
-	movl $0, %ecx
- 	movl $0, %edx
-
-	movl a, %eax #nizi deo a
-	movl a+4, %ecx #visi deo a
+	movl a+4, %ebx
+	movl $0, %ecx # nizi deo rez
+	movl $0, %edx # visi deo rez
 petlja:
-	#ebx donji deo rez, edx gornji deo
-	addl b, %ebx
+	addl b, %ecx
 	adcl b+4, %edx
 	jc greska_izlaz
-	cmpl $0, %eax
-	ja manji_deo
-	je veci_deo
-manji_deo:
+brojac:
 	subl $1, %eax
-	jmp petlja
-veci_deo:
-	cmpl $0, %ecx
+	sbbl $0, %ebx
+	ja petlja
+	cmpl $0, %eax
 	je kraj
-	subl $1, %ecx
-	je kraj
-	jmp petlja
+	ja petlja
 greska_izlaz:
 	incb greska
 	jmp kraj

@@ -32,13 +32,13 @@ deljenje:
 	addl $1, a
 	adcl $0, a+4
 	jc greska_izlaz
-	subl $0x3, %ecx
+	subl $3, %ecx
 	sbbl $0, %edx
-
 	cmpl $3, %ecx
 	jge deljenje
 	cmpl $0, %edx
 	jg deljenje
+	jmp kraj
 greska_izlaz:
 	movl $1, greska
 	jmp kraj
