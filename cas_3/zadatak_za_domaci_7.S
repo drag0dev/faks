@@ -7,7 +7,7 @@ b: .quad 0xFFFFFFFFF, 0xFFFFFFFFFF, 0xFFFFFFFF
 c: .fill 5,8,0
 greska: .byte 0
 .section .text
-.global main
+.globl main
 main:
 	movl $0, %ebp #visi deo pri sabiranju
 	movl $0, %esi #index

@@ -10,7 +10,7 @@ niz_indeks_max: .fill 10,1,0 #i najmanji index tako sto navimo 1 na
 min: .quad 0
 max: .quad 0
 .section .text
-.global main
+.globl main
 main:
 	movl $0, %esi #index
 	movl $niz, %eax #baza niza

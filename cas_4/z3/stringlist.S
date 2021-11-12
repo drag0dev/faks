@@ -1,9 +1,9 @@
 .section .data
 str_unos:   .ascii "Unesite string:\0"
-str_unos_len = . -str_unos -1
+str_unos_len = . -str_unos
 
 str_ispis:  .ascii "\nObrnuti redosled:\n\0"
-str_ispis_len = . -str_unos -1
+str_ispis_len = . -str_unos
 
 broj_stringova = 10
 
@@ -15,7 +15,7 @@ duzina_stringova: .fill broj_stringova,4,0 #niz koji cuva duzinu svakog unesenog
 poslednji_element_matrica= matrica + broj_stringova * str_matrica_len
 poslednji_element_duzina= duzina_stringova + broj_stringova * 4
 .section .text
-.global main
+.globl main
 main:
 	leal matrica, %edi #edi baza za matricu
 	leal duzina_stringova, %esi #baza za duzuni stringova
@@ -45,10 +45,8 @@ petlja:
 	jmp petlja
 
 priprema:
-	leal matrica, %edi
 	movl $poslednji_element_matrica, %edi #edi ce imati adresu poslednjeg stringa
 
-	leal duzina_stringova, %esi
 	movl $poslednji_element_duzina, %esi #esi ce imati adresu poslednjeg elementa niza duzina
 
 	movl $0, %ebp

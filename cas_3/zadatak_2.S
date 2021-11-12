@@ -6,7 +6,7 @@ niz: .long 14, 32, 5, 99, 91, 27, 66, 0, 8, 12
 min_el: .long 0
 max_el: .long 0
 .section .text
-.global main
+.globl main
 
 main:
 	movl $0, %esi #index

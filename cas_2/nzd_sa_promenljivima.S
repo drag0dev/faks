@@ -6,7 +6,7 @@ a: .long 8
 b: .long 12
 rez: .long -1
 .section .text
-.global main
+.globl main
 
 main:
 	movl a, %eax

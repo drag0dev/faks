@@ -7,7 +7,7 @@ c: .quad 0xAFF0000
 brojac: .byte 0
 greska: .byte 0
 .section .text
-.global main
+.globl main
 main:
 	movl b, %eax
 	movl b+4, %ebx

@@ -4,7 +4,7 @@
 greska: .byte 0
 n: .quad 15
 .section .text
-.global main
+.globl main
 main:
 	movl $1, %eax
 	movl $0, %ebx

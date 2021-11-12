@@ -7,7 +7,7 @@ a: .quad 0
 b: .quad 5
 n: .long 3
 .section .text
-.global main
+.globl main
 main:
 	movl b, %eax
 	movl b+4, %ebx

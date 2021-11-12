@@ -1,7 +1,7 @@
 .section .data
 a: .long 0x12345678
 .section .text
-.global main
+.globl main
 
 main:
 	movb a, %ah

@@ -5,7 +5,7 @@ string: .ascii "ssfgeabbasss\0"
 asc: .byte 0 #0 rastuce, 1 opadajuci
 promena: .byte 0 #pomocna koja prati da li je bilo pomeranja
 .section .text
-.global main
+.globl main
 main:
 	movl $string, %eax #eax baza
 	cmpb $0, string #provera da li je prazan string

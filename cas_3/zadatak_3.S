@@ -2,7 +2,7 @@
 .section .data
 string: .ascii "abcd   \0"
 .section .text
-.global main
+.globl main
 main:
 	movl $string, %eax #eax drzi adresa od strina
 kraj_s: #petlja traiz \0 u stringu

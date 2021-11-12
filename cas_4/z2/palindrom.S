@@ -1,14 +1,14 @@
 .section .data
 poruka: .ascii "Unesite string:\0"
-poruka_len = . - poruka -1
+poruka_len = . - poruka
 nijep:  .ascii "String nije palindrom.\n\0"
-nijep_len = . - nijep - 1
+nijep_len = . - nijep
 jestep: .ascii "String je palindrom.\n\0"
-jestep_len = . - jestep -1
+jestep_len = . - jestep
 unos:   .fill 50,1,42
 unos_len = . -unos -1
 .section .text
-.global main
+.globl main
 main:
 	#ispis poruke
 	movl $4, %eax

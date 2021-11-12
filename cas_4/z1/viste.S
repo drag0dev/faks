@@ -6,7 +6,7 @@ poruka2_len = . - poruka2 -1
 imeprez: .fill 50,1,42
 imeprez_len = . - imeprez
 .section .text
-.global main
+.globl main
 
 main:
 	#ispis poruka1

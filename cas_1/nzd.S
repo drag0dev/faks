@@ -1,9 +1,9 @@
 #program koji racuna nzd
-#autor Dragoslav Tamindzija SV47
+#autor Dragoslav Tamindzija SV47/2021
 
 .section .data
 .section .text
-.global main
+.globl main
 
 main:
 	movl $12, %eax #prvi broj

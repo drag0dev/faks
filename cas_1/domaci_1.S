@@ -3,7 +3,7 @@
 
 .section .data
 .section .text
-.global main
+.globl main
 
 main:
 	movl $10, %eax #n-ti element

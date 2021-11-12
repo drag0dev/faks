@@ -7,7 +7,7 @@ suma: .long 0
 index_pocetak: .long 2
 index_kraj: .long 6
 .section .text
-.global main
+.globl main
 
 main:
 	movl index_pocetak, %esi #index

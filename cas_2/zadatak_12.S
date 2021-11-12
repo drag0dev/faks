@@ -5,7 +5,7 @@ a: .quad 20
 b: .quad 4
 greska: .byte 0
 .section .text
-.global main
+.globl main
 
 main:
 	#provera da li je a vece od b
