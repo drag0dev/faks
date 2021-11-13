@@ -19,7 +19,7 @@ int unesi_niz(char ime, long long *niz, int n) {
 int print_niz(char ime, long long *niz, int n) {
     int i;
     printf("\nElementi niza '%c'\n",ime);
-    for (i=0;i<n;i++)
+    for (i=0;i<n && i<MAXLEN;i++)
         printf("%c[%d]=%lld\n",ime,i,niz[i]);
 }
 
