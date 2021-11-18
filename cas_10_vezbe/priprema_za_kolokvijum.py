@@ -2,12 +2,14 @@
 #               ime_korisnikka: {suma: x, broj_uplata: x},
 #               ime_korisnikka: {suma: x, broj_uplata: x},
 #               }
-def string_is_number(str):
+#izlged dictionaryija koji se koristi
+
+def string_is_number(str): #funkcija koja proverava da li je string broj ili
     for chr in str:
         if not((chr.isdigit() or chr.isdigit()) or chr=='.'): return False
     return True
 
-def ucitaj_korisnike(ime_fajla):
+def ucitaj_korisnike(ime_fajla): #funkcija koja parsuje bank_log.txt i vraca dictionary sa korsinicima
     dictionary = {}
     fajl = open(ime_fajla, "r")
     
@@ -15,29 +17,29 @@ def ucitaj_korisnike(ime_fajla):
         
         korisnik = linija.split(' ')
         
-        if len(korisnik)<=1 : continue
+        if len(korisnik)<=1 : continue #ako je u linij u bank_log.txt samo ime korinsika ne radi se nista
         
         str = korisnik[1]
         if '\n' in korisnik[1]: korisnik[1] = str[:-1]
         
-        if korisnik[1]!="newaccount": #ako imamo treci argument
+        if len(korisnik)==3: #ako imamo treci argument
             str = korisnik[2]
             if korisnik[2]!="\n" and '\n' in korisnik[2]: korisnik[2] = str[:-1]
         
 
-        if korisnik[0] in dictionary.keys():
+        if korisnik[0] in dictionary.keys(): #da li postoji korisnik koji se unosi
             
-            if(korisnik[1]=='income'):
-                if korisnik[2]!='' and string_is_number(korisnik[2]):
+            if(korisnik[1]=='income' and len(korisnik)==3): #ako je akcija income
+                if korisnik[2]!='' and string_is_number(korisnik[2]): #ako je treci argument broj
                     dictionary[korisnik[0]]['suma'] += eval(korisnik[2])
                     dictionary[korisnik[0]]['broj_uplata'] += 1
                 
-            elif(korisnik[1]=='withdrawal'):
-                if korisnik[2]!='' and string_is_number(korisnik[2]):
+            elif(korisnik[1]=='withdrawal' and len(korisnik)==3):
+                if korisnik[2]!='' and string_is_number(korisnik[2]): #ako je treci argument broj
                     dictionary[korisnik[0]]['suma'] -= eval(korisnik[2])
                     
                 
-        else:
+        else: #ako korisnik ne postoji
             if korisnik[1] == 'newaccount':
                 dictionary[korisnik[0]] = {'suma': 0, 'broj_uplata':0}
                 
@@ -46,13 +48,13 @@ def ucitaj_korisnike(ime_fajla):
     print('\n\n\n')
     return dictionary
 
-def izvestaj(dictionary):
+def izvestaj(dictionary): #ispisuje se izvestaj u report.txt
     fajl = open('report.txt', 'w')
     for korisnik in dictionary:
         fajl.writelines(korisnik + "|" + str(dictionary[korisnik]["suma"]) + "\n")
     fajl.close()
     
-def korisnik_sa_zadatim_imenom(str, dictionary):
+def korisnik_sa_zadatim_imenom(str, dictionary): #traze se korisnici koji u imenu imaju str
     pronadjen = False
     for korisnik in dictionary:
         if str in korisnik: 
@@ -62,7 +64,7 @@ def korisnik_sa_zadatim_imenom(str, dictionary):
     if not pronadjen:
         print("Korisnik sa", str, "nije pronadjen")
     
-def korisnici_sa_manje_na_racunu(broj,dictionary):
+def korisnici_sa_manje_na_racunu(broj,dictionary): #ispisuju se korisnici koji imaju manje na racunu od broj
     pronadjen = False
     print("Korsnici koji imaju manje od", broj, "na racunu:")
     for korisnik in dictionary:
@@ -73,31 +75,35 @@ def korisnici_sa_manje_na_racunu(broj,dictionary):
         print("Korisnik sa manje od", broj, "nije pronadjen")
     print()
 
-def najveci_broj_uplata(dictionary):
+def najveci_broj_uplata(dictionary): #traze se svi korisnici koji imaju max uplata
     max = 0
     korisnik_max = ''
-    for korisinik in dictionary:
+    for korisinik in dictionary: #prvo nadjemo koji je najveci broj uplata
         if dictionary[korisinik]['broj_uplata'] > max:
             max = dictionary[korisinik]['broj_uplata']
             korisnik_max = korisinik
     
     print("Korisnik/ci sa najvecim brojem uplata: ")
-    for korisinik in dictionary:
+    for korisinik in dictionary: #onda se ispisuju svi korisnici koji imaju jednak max broj uplata
         if dictionary[korisinik]['broj_uplata'] == max:
             print("Korisnik", korisinik, "sa:", str(dictionary[korisinik]['broj_uplata']), "brojem uplata")
     print()
 
-def najveca_suma(dictionary):
+def najveca_suma(dictionary): #traze se korisnici sa najvecom sumom
     max = 0
     korisnik_max = ''
     for korisinik in dictionary:
         if dictionary[korisinik]['suma'] > max:
             max = dictionary[korisinik]['suma']
             korisnik_max = korisinik
+    print("Korisnik/ci sa najvecim stanjem na racunu: ")
+    for korisinik in dictionary:
+        if dictionary[korisinik]['suma'] == max:
+            print("Korisnik", korisinik, "ima najvece stanje na racunu: ", str(dictionary[korisinik]['suma']))
     if max != 0: print('Korsinik sa najvecom sumom je', korisnik_max, ':', max)
     print()
 
-def stanje_korisnika(kljuc, dictionary):
+def stanje_korisnika(kljuc, dictionary): #ispisuje se stanje na racunu za korisnika kljuc
     if kljuc in dictionary.keys():
         print("Stanje korisnika:", kljuc, "je:", str(dictionary[kljuc]['suma']))
     else: print("Korisnik", kljuc, "ne postoji")
@@ -112,7 +118,5 @@ def main():
     korisnik_sa_zadatim_imenom('mi', dict_korisnika)
     izvestaj(dict_korisnika)
     
-    
-
 if __name__ == '__main__':
     main()
