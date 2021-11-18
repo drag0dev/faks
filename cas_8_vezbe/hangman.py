@@ -106,15 +106,20 @@ def provera_kraj():
 
 
 #glavni deo programa
-unos=''
-nova_igra()
+def main():
+    unos=''
+    nova_igra()
 
-while True:
-    ispis_hangamana()
-    ispis_pogodjenih()
-    if provera_kraj():
-        nova_igra()
-        continue
-    unos = zastita_unosa()
-    if unos=='-1': break
-    provera_pogodjenih(unos)
+    while True:
+        ispis_hangamana()
+        ispis_pogodjenih()
+        if provera_kraj():
+            nova_igra()
+            continue
+        unos = zastita_unosa()
+        if unos=='-1': break
+        provera_pogodjenih(unos)
+
+
+if __name__ == '__main___':
+    main()
