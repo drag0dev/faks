@@ -6,7 +6,7 @@
 
 def string_is_number(str): #funkcija koja proverava da li je string broj ili
     for chr in str:
-        if not((chr.isdigit() or chr.isdigit()) or chr=='.'): return False
+        if not(chr.isdigit() or chr=='.'): return False
     return True
 
 def ucitaj_korisnike(ime_fajla): #funkcija koja parsuje bank_log.txt i vraca dictionary sa korsinicima
