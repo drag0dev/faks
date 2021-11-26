@@ -124,7 +124,7 @@ Kezhen Peak|7038|23091|Karakoram|China
 Shah Dhar|7038|23091|Hindu Kush|Afghanistan/Pakistan
 Spantik|7027|23054|Karakoram|Pakistan
 Khan Tengri|7010|22999|Tian Shan|Kyrgyzstan/Kazakhstan/China
-Machapuchare|6993|22943|Himalayas/Nepal
+Machapuchare|6993|22943|Himalayas|Nepal
 Laila Peak (Haramosh Valley)|6985|22917|Karakoram|Pakistan
 Kang Guru|6981|22904|Himalayas|Nepal
 Karun Kuh|6977|22890|Karakoram|Pakistan
@@ -135,7 +135,7 @@ Kedarnath (mountain)|6940|22769|Himalayas|India
 K7|6934|22749|Karakoram|Pakistan
 Panchchuli|6904|22651|Himalayas|India
 Thalay Sagar|6904|22651|Himalayas|India
-Lunkho e Dosare|6901|22641|Hindu
+Lunkho e Dosare|6901|22641|palceholder|Hindu
 Ojos del Salado|6891|22608|Andes|Argentina/Chile
 Siniolchu|6888|22598|Himalayas|India
 Kanjiroba|6883|22582|Himalayas|Nepal
@@ -160,7 +160,7 @@ Mount Pandim|6691|21952|Himalayas|India
 Num Ri|6677|21906|Himalayas|Nepal
 Lungser Kangri|6666|21870|Himalayas|India
 Meru Peak|6660|21850|Himalayas|India
-Gul Lasht|Zom|6657|21841|Hindu
+Gul Lasht|6657|21841|Zom|Hindu
 Huascarán Norte|6655|21834|Andes|Peru
 Khumbutse|6640|21785|Himalayas|Nepal
 Mount Kailash|6638|21778|Transhimalaya|China
@@ -172,7 +172,7 @@ Pangpoche|6620|21719|Himalayas|Nepal
 Manirang|6597|21644|Himalayas|India
 Nilkantha|6596|21640|Himalayas|India
 Phuparash Peak|6574|21568|Karakoram|Pakistan
-Sickle Moon|Peak|6574|21568|Himalayas|India
+Sickle Moon Peak|6574|21568|Himalayas|India
 Buni Zom|6551|21493|Hindu Kush|Pakistan
 Nevado Sajama|6542|21463|Andes|Bolivia
 Ghamubar Zom|6518|21385|Hindu Kush|Pakistan
