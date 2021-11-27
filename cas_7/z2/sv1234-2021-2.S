@@ -18,32 +18,30 @@ encode:
 
 	jmp unutrasnja_petlja
 
-spoljasnja_petlja: #prolazimo kroz izvorni i ciljni
+spoljasnja_petlja: #prolazimo kroz svaki karakter iz enkodovati
 
-	movl 16(%ebp), %ecx
-	addl $1, %eax
-	addl $1, %ebx
+	addl $1, %ecx
+	movl 8(%ebp), %eax
+	movl 12(%ebp), %ebx
 
-	cmpb $0, (%eax)
+	cmpb $0, (%ecx)
 	je kraj
 
-unutrasnja_petlja: #prolazimo kroz str enkodovati
+unutrasnja_petlja: #prolazimo kroz izvorni i ciljni
 	movb (%eax), %dl
 	cmpb %dl, (%ecx)
 	je promena
-
-	addl $1, %ecx
-	cmpb $0, (%ecx)
+	addl $1, %eax
+	addl $1, %ebx
+	cmpb $0, (%eax)
 	je spoljasnja_petlja
 	jmp unutrasnja_petlja
-promena:
+
+promena: #ako se nadje slovo iz enkodovani u izvornom
 	incl %esi
 	movb (%ebx), %dl
 	movb %dl, (%ecx) #zamenjujemo ciljni u enkodovati
-	addl $1, %ecx
-	cmpb $0, (%ecx)
-	je spoljasnja_petlja
-	jmp unutrasnja_petlja
+	jmp spoljasnja_petlja
 
 kraj:
 	movl %esi, %eax
