@@ -19,7 +19,7 @@ main:
 
 	#unos stringa
 	movl $3, %eax
-	movl $1, %ebx
+	movl $0, %ebx
 	movl $str, %ecx
 	movl $50, %edx
 	int $0x80
