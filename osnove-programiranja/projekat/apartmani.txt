@@ -1,0 +1,3 @@
+1|apartman|3|5|45.251739|19.837260|Sutjetska 3, Novi Sad, 21000|najs|1500|Aktivno|parking,kuhinja,pegla
+2|apartman|3|5|45.251739|19.837260|Sutjetska 3, Novi Sad, 21000|najs|1500|Aktivno|parking,kuhinja,pegla
+3|apartman|3|5|45.251739|19.837260|Sutjetska 3, Novi Sad, 21000|Stipe|1500|Aktivno|parking,kuhinja,pegla

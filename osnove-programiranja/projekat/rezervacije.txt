@@ -1,0 +1,4 @@
+1|23.10|5|lole|kreirana
+1|23.10|5|lole|zavresna
+1|23.10|5|lole|odustanak
+1|23.10|5|lole|prihvacena

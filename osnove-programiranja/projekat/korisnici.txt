@@ -1,0 +1,4 @@
+admin|admin|Dragoslav|Tamindžija|Musko|0637618323|dragoslavtamindzija@gmail.com|admin
+lole|test|Lole|Test|Zensko|0638389728|testlole@lole.com|gost
+najs|test|Najs|Test|Musko|0637838778|najs@lole.co|domacin
+stipe|test|Stipe|Test|Musko|0637838778|najs@lole.co|domacin
