@@ -1,0 +1,7 @@
+admin|admin|Dragoslav|Tamindžija|M|1|drago@drago.com|ADMIN
+perap|pera|Petar|Peric|M|0632078445011|petarp@gmail.com|DOMACIN
+milica|milicam|Milica|Milic|Z|0644917692492|milicam@gmail.com|DOMACIN
+svet123|svet123!|Svetislav|Tomic|M|06251092349|bajcetas@outlook.com|GOST
+svetzord1|sifra123|Svetozar|Bozic|M|0631445566|biser@gmail.com|GOST
+vukm|vuk123|Vuk|Mitrovic|M|0621599497|wbosvuk@gmail.com|GOST
+unas|unas|Una|Sevarlic|Z|0621094986|unasevarlic@gmail.com|GOST

@@ -1,0 +1,5 @@
+0|parking
+1|kuhinja
+2|pegla
+3|ves masina
+4|klima uredjaj
